@@ -1,0 +1,203 @@
+# Sessions Log - Cerimonies
+# Histórico de sesiones de desarrollo
+
+sessions:
+  - id: "2025-11-27-presupuesto-comercial"
+    titulo: "Presupuesto técnico y propuesta comercial con modelo suscripción"
+    data: "2025-11-27"
+    duracion: "2h"
+    participantes: ["Claude (DevAgent)"]
+    objetivo: "Crear presupuesto detallado del proyecto y propuesta comercial con modelo de ingresos recurrentes para presentar al cliente Xocolat Events"
+
+    features_implementadas:
+      - nombre: "Presupuesto técnico completo"
+        descripcion: |
+          Documento exhaustivo con desglose de 275h de desarrollo en 7 fases.
+          Stack definido: Next.js 14 + Supabase + Twilio SMS + Mailchimp.
+          Módulos MVP: CRM + Calendario + Recordatorios + Comunicaciones (Email + SMS).
+          3 opciones de precio: Estándar (13.750€), Profesional (17.875€), Cerrado (15.500€).
+          Timeline estimado: 10-12 semanas con dedicación parcial.
+      - nombre: "Análisis costes infraestructura"
+        descripcion: |
+          Costes mensuales calculados con Twilio SMS incluido.
+          Opción Free Tier: ~23-33€/mes (VPS + Supabase Free + Twilio + dominio).
+          Opción Pro: ~71€/mes (VPS + Supabase Pro + Twilio + Mailchimp + dominio).
+          Cliente ya paga Mailchimp (no incluir en costes).
+      - nombre: "Propuesta comercial con suscripción"
+        descripcion: |
+          Modelo de ingresos recurrentes: 1.000€ inicial + 850€/mes × 18 meses.
+          3 opciones (Premium, Estándar, Económica) con diferentes cuotas mensuales.
+          Comparativa vs pago único mostrando valor añadido (mantenimiento, soporte, mejoras).
+          Todo incluido: desarrollo, infraestructura, mantenimiento, soporte, nuevas funcionalidades trimestrales.
+          Estrategia post-18 meses: renovación a 350€/mes o adquisición por 2.500€.
+      - nombre: "Análisis de rentabilidad ajustado"
+        descripcion: |
+          Recalculado con propuesta realista: 1.000€ + 125-150€/mes.
+          Beneficio mensual con 150€/mes: 122€ (margen 81%).
+          Beneficio anual: 1.464€/año.
+          Análisis crítico: NO cubre desarrollo (11.000€) con 1 solo cliente.
+          Estrategias de viabilidad: múltiples clientes, subir pago inicial, o modelo template reutilizable.
+
+    problemas_resueltos:
+      - problema: "Precio de suscripción inicial (850€/mes) demasiado alto para cliente pequeño"
+        solucion: "Ajustado a propuesta realista de 125-150€/mes con análisis de viabilidad por múltiples clientes"
+      - problema: "Cliente ya paga Mailchimp, estaba duplicado en costes"
+        solucion: "Eliminado Mailchimp de costes infraestructura en análisis final de rentabilidad"
+
+    decisiones_tomadas:
+      - decision: "Stack tecnológico definitivo: Next.js 14 + Supabase + Twilio SMS + Mailchimp"
+        justificacion: "Desarrollo ágil, escalable, costes controlados, integraciones nativas"
+        adr_relacionada: null
+      - decision: "Integración Twilio SMS obligatoria en MVP"
+        justificacion: "Cliente necesita recordatorios por SMS (mayor tasa apertura que email: 98% vs 20%)"
+        adr_relacionada: null
+      - decision: "Modelo de negocio: ingresos recurrentes con permanencia 18 meses"
+        justificacion: "Flujo de caja predecible, relación largo plazo, mayor LTV del cliente"
+        adr_relacionada: null
+      - decision: "Propuesta ajustada: 1.000€ + 150€/mes viable solo con múltiples clientes"
+        justificacion: "Con 1 cliente tarda 7.5 años en amortizar desarrollo. Necesita 3-5 clientes o subir precios"
+        adr_relacionada: null
+
+    tecnologias_agregadas:
+      - nombre: "Twilio SMS API"
+        motivo: "Envío de SMS automáticos de recordatorios, confirmaciones y avisos urgentes"
+
+    deployments: []
+
+    gotchas:
+      - tipo: "warning"
+        problema: "Modelo suscripción 1.000€ + 150€/mes NO rentable con un solo cliente"
+        solucion: "Necesario conseguir 3-5 clientes con sistema reutilizable o subir pago inicial a 6.000-8.000€"
+        criticidad: "alta"
+      - tipo: "gotcha"
+        problema: "Twilio SMS tiene coste variable (~0.065€/SMS España) difícil de estimar"
+        solucion: "Calcular promedio 150-300 SMS/mes según uso esperado del cliente, incluir en análisis"
+        criticidad: "media"
+
+    proximos_pasos:
+      - "Presentar presupuesto y propuesta comercial al cliente Xocolat Events"
+      - "Decidir modelo de negocio final: suscripción baja con múltiples clientes vs precio único más alto"
+      - "Si acepta: firmar contrato y comenzar desarrollo en próxima sesión"
+      - "Validar con cliente volumen esperado de SMS mensuales para ajustar costes Twilio"
+      - "Definir si se va a buscar más clientes del sector bodas/eventos con sistema reutilizable"
+
+    notas_adicionales: |
+      Esta sesión se centró 100% en documentación comercial y financiera, sin código.
+
+      Documentos creados en /docs/:
+      - presupuesto-proyecto.md (11KB): Presupuesto técnico detallado con 275h desarrollo
+      - propuesta-comercial-recurrente.md (13KB): Modelo suscripción 1.000€ + 850€/mes
+      - calculo-rentabilidad.md (11KB): Análisis realista 1.000€ + 125-150€/mes
+
+      Conclusión financiera crítica:
+      Con 1.000€ + 150€/mes se obtiene 122€/mes de margen (81%), pero solo ingresas 3.700€ en 18 meses.
+      El desarrollo vale 11.000-13.750€, por lo que tardas ~7.5 años en recuperar inversión con 1 cliente.
+
+      Estrategias viables:
+      1. Buscar 3-5 clientes del sector bodas/eventos → Beneficio 610€/mes con 5 clientes
+      2. Subir pago inicial a 6.000-8.000€ para cubrir desarrollo desde inicio
+      3. Subir cuota mensual a 400-600€/mes
+      4. Desarrollar sistema template reutilizable (personalización 20-30h por cliente adicional)
+
+      Stack definitivo confirmado con cliente:
+      - Frontend/Backend: Next.js 14 (App Router + API Routes)
+      - BD: Supabase (PostgreSQL + Auth)
+      - Email: Mailchimp (cliente ya lo paga)
+      - SMS: Twilio
+      - Deploy: VPS Hostinger dockerizado
+
+  - id: "2025-11-27-mvp-visual"
+    titulo: "MVP Visual con datos demo para presentación cliente"
+    data: "2025-11-27"
+    duracion: "1h"
+    participantes: ["Claude (DevAgent)"]
+    objetivo: "Crear un MVP visual rápido con datos ficticios para impresionar al cliente Xocolat Events y conseguir una reunión presencial de auditoría"
+
+    features_implementadas:
+      - nombre: "Proyecto Next.js completo"
+        descripcion: |
+          Inicializado proyecto con Next.js 16, TypeScript, Tailwind CSS 4 y shadcn/ui.
+          Estructura App Router con layout compartido (sidebar + header).
+      - nombre: "Dashboard principal"
+        descripcion: |
+          Métricas: total clientes, bodas confirmadas, presupuestos pendientes, facturación estimada.
+          Alertas importantes destacadas en rojo.
+          Próximos eventos y clientes recientes.
+          Recordatorios con prioridad visual (alta/media/baja).
+      - nombre: "Lista de Clientes"
+        descripcion: |
+          Tabla completa con búsqueda en tiempo real.
+          Filtros por estado (lead, contactado, presupuestado, confirmado, realizado).
+          Iconos de origen (bodas.net, WhatsApp, Instagram, web, referido).
+          Acciones rápidas: WhatsApp, Email, Ver ficha.
+      - nombre: "Ficha de Cliente detallada"
+        descripcion: |
+          Datos completos con tabs (Información, Eventos, Historial).
+          Cuenta atrás hasta fecha del evento.
+          Presupuesto visible.
+          Acciones rápidas: Pedir reseña (genera mensaje WhatsApp), Programar reunión, Crear presupuesto, Enviar felicitación.
+      - nombre: "Calendario de eventos"
+        descripcion: |
+          Calendario visual interactivo con días marcados.
+          Resumen mensual (bodas, reuniones, otros).
+          Panel lateral con eventos del día seleccionado.
+          Próximos eventos listados.
+      - nombre: "Datos demo realistas"
+        descripcion: |
+          8 clientes ficticios con diferentes estados y orígenes.
+          Eventos programados (bodas 2025, reuniones, aniversarios, cumpleaños).
+          Alertas de demostración (aniversario hoy, lead sin contactar, recordatorio reunión).
+
+    problemas_resueltos:
+      - problema: "create-next-app pedía inputs interactivos"
+        solucion: "Usar echo 'n' | npx create-next-app para responder automáticamente"
+
+    decisiones_tomadas:
+      - decision: "Stack: Next.js 16 + Tailwind + shadcn/ui + Supabase (futuro)"
+        justificacion: "Desarrollo rápido, componentes profesionales, escalable, sin coste inicial"
+        adr_relacionada: "001"
+      - decision: "MVP solo visual sin backend real"
+        justificacion: "Objetivo es impacto visual para conseguir reunión, no funcionalidad completa"
+        adr_relacionada: null
+      - decision: "Datos demo hardcodeados en TypeScript"
+        justificacion: "Permite demo inmediata sin configurar BD, fácil de modificar"
+        adr_relacionada: null
+
+    tecnologias_agregadas:
+      - nombre: "Next.js 16"
+        motivo: "Framework React con App Router, SSR, excelente DX"
+      - nombre: "Tailwind CSS 4"
+        motivo: "Estilos rápidos y consistentes"
+      - nombre: "shadcn/ui"
+        motivo: "Componentes UI profesionales (Card, Table, Badge, Calendar, Tabs, etc.)"
+      - nombre: "date-fns"
+        motivo: "Dependencia del Calendar de shadcn/ui"
+
+    deployments: []
+
+    gotchas:
+      - tipo: "warning"
+        problema: "Next.js 16 usa Turbopack por defecto, algunas opciones de create-next-app han cambiado"
+        solucion: "Usar --no-turbopack si hay problemas de compatibilidad"
+        criticidad: "baja"
+      - tipo: "gotcha"
+        problema: "shadcn/ui init requiere responder prompts o usar -d para defaults"
+        solucion: "npx shadcn@latest init -d para instalación sin prompts"
+        criticidad: "baja"
+
+    proximos_pasos:
+      - "Presentar MVP al cliente y conseguir reunión presencial de auditoría"
+      - "Tras reunión: definir requisitos funcionales detallados"
+      - "Configurar Supabase para persistencia real de datos"
+      - "Implementar autenticación"
+      - "Añadir formularios funcionales (crear/editar cliente)"
+
+    notas_adicionales: |
+      El cliente (Xocolat Events) organiza principalmente bodas (95% del negocio).
+      Actualmente usa Holded solo para facturación, no tiene CRM que le convenza.
+      Recibe leads por múltiples canales: WhatsApp, email, bodas.net, Instagram, web.
+      Necesidades principales: gestión clientes, calendario, recordatorios automáticos (aniversarios, cumpleaños), sistema de reseñas.
+
+      El MVP incluye botón "Pedir reseña" que genera enlace WhatsApp con mensaje predefinido - esto resuelve un dolor real del cliente.
+
+      Servidor de desarrollo corriendo en http://localhost:3000

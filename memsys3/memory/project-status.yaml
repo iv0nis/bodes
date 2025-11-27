@@ -1,0 +1,119 @@
+# Project Status - Cerimonies
+
+metadata:
+  ultima_actualizacion: "2025-11-27"
+  actualizado_por: "Claude (Session Presupuesto Comercial)"
+  fase: "Presupuestación y Propuesta Comercial"
+  memsys3_version: "v0.7.0"
+  memsys3_deployed: "2025-11-27"
+
+vision_general:
+  que_es: "Sistema de automatización integral para Xocolat Events (gestión eventos, catering, bodas)"
+  objetivo: "Sistema integral completo: CRM + operativa + facturación para gestión interna de eventos"
+  client: "Xocolat Events - Mataró, Barcelona"
+  alcance: "Sistema interno (sin web pública), enfocado en gestión de clientes, presupuestos, calendario eventos, operativa diaria"
+
+estado_actual:
+  fase: "MVP Visual completado + Presupuesto y propuesta comercial preparados"
+  ultima_feature: "Documentación comercial completa: presupuesto técnico + propuesta suscripción + análisis rentabilidad"
+  siguiente_milestone: "Presentar presupuesto al cliente y cerrar acuerdo comercial"
+
+features:
+  dashboard:
+    nombre: "Dashboard"
+    estat: "operatiu"
+    descripcion: "Métricas, alertas, próximos eventos, clientes recientes, recordatorios"
+  clientes:
+    nombre: "Gestión Clientes"
+    estat: "operatiu"
+    descripcion: "Lista con filtros/búsqueda, ficha detallada, acciones rápidas (WhatsApp, reseña)"
+  calendario:
+    nombre: "Calendario"
+    estat: "operatiu"
+    descripcion: "Vista mensual, eventos por día, próximos eventos"
+
+stack_tecnologico:
+  frontend:
+    framework: "Next.js 14 (definido en presupuesto)"
+    ui: "Tailwind CSS + shadcn/ui"
+    lenguaje: "TypeScript"
+    notas: "App Router + API Routes, componentes profesionales shadcn/ui"
+
+  backend:
+    framework: "Next.js API Routes + Server Actions"
+    notas: "Supabase para persistencia, autenticación y storage"
+
+  database:
+    tipo: "PostgreSQL (Supabase)"
+    plan_inicial: "Free Tier (500MB, 50K usuarios/mes)"
+    escalabilidad: "Supabase Pro si necesita más recursos"
+
+  integraciones:
+    email: "Mailchimp (cliente ya lo tiene contratado)"
+    sms: "Twilio (~0.065€/SMS España, estimado 150-300 SMS/mes)"
+
+  deploy:
+    platform: "VPS Hostinger (4GB RAM) con Docker + Docker Compose"
+    dominio: "A definir con cliente"
+    ssl: "Incluido"
+
+urls:
+  desarrollo: "http://localhost:3000"
+
+pendientes_prioritarios:
+  - prioritat: 1
+    tasca: "Presentar presupuesto y propuesta comercial al cliente"
+    detall: "Enviar docs/presupuesto-proyecto.md y docs/propuesta-comercial-recurrente.md"
+
+  - prioritat: 2
+    tasca: "Decidir modelo de negocio definitivo"
+    detall: "Evaluar si 1.000€+150€/mes viable con múltiples clientes o subir precio inicial"
+
+  - prioritat: 3
+    tasca: "Validar volumen SMS mensual con cliente"
+    detall: "Confirmar estimación 150-300 SMS/mes para ajustar costes Twilio"
+
+  - prioritat: 4
+    tasca: "Cerrar acuerdo comercial y firmar contrato"
+    detall: "Definir forma de pago (3 o 4 pagos), permanencia 18 meses"
+
+  - prioritat: 5
+    tasca: "Evaluar estrategia multi-cliente"
+    detall: "Decidir si buscar 3-5 clientes sector bodas/eventos con sistema template reutilizable"
+
+  - prioritat: 6
+    tasca: "Iniciar desarrollo tras firma"
+    detall: "Setup infraestructura, Supabase, autenticación, migrar MVP a producción"
+
+decisions_clau:
+  ADR-001:
+    titulo: "Stack tecnológico definitivo"
+    decision: "Next.js 14 + Tailwind + shadcn/ui + Supabase + Twilio SMS + Mailchimp"
+    fecha: "2025-11-27"
+    impacto: "Define toda la arquitectura del sistema y costes de infraestructura"
+
+  decision_comercial_001:
+    titulo: "Modelo de ingresos recurrentes con permanencia"
+    decision: "1.000€ inicial + 150€/mes × 18 meses (viable con múltiples clientes)"
+    fecha: "2025-11-27"
+    impacto: "Requiere estrategia multi-cliente o ajuste de precios para rentabilidad"
+
+  decision_integracion_sms:
+    titulo: "Integración Twilio SMS obligatoria en MVP"
+    decision: "Incluir envío SMS automático desde el inicio (no fase 2)"
+    fecha: "2025-11-27"
+    justificacion: "Tasa apertura SMS 98% vs Email 20%, crítico para recordatorios"
+
+convenciones_codigo:
+  idioma_ui: "Castellano"
+  idioma_codigo: "Inglés (variables, funciones) con comentarios en castellano donde sea útil"
+  notas: "UI en castellano, código sigue convenciones estándar de React/Next.js"
+
+historic_sessions:
+  - id: "2025-11-27-presupuesto-comercial"
+    titulo: "Presupuesto técnico y propuesta comercial"
+    resultado: "3 documentos comerciales creados: presupuesto 15.500€, propuesta suscripción, análisis rentabilidad. Stack definitivo confirmado."
+
+  - id: "2025-11-27-mvp-visual"
+    titulo: "MVP Visual con datos demo"
+    resultado: "Dashboard, Clientes, Calendario implementados con datos demo"

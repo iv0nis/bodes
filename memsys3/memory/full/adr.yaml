@@ -1,0 +1,74 @@
+# ADR Log - Cerimonies
+# Architecture Decision Records del proyecto
+
+adrs:
+  - id: "001"
+    titulo: "Stack tecnológico: Next.js + Tailwind + shadcn/ui + Supabase"
+    data: "2025-11-27"
+    estado: accepted
+    area: "frontend"
+
+    context: |
+      Necesitábamos elegir el stack tecnológico para Cerimonies, un sistema de gestión
+      interno para Xocolat Events (empresa de organización de bodas y eventos).
+
+      Requisitos clave:
+      - Desarrollo rápido (MVP visual para presentar al cliente)
+      - UI profesional y moderna
+      - Escalable para añadir funcionalidades (CRM, calendario, facturación)
+      - Coste inicial bajo o nulo
+      - Fácil de mantener
+
+    decision: |
+      Usaremos Next.js 16 + Tailwind CSS 4 + shadcn/ui para el frontend,
+      con Supabase como backend/base de datos cuando se necesite persistencia.
+
+    alternatives:
+      - nombre: "MERN Stack (MongoDB, Express, React, Node)"
+        pros:
+          - "Stack muy conocido"
+          - "Flexibilidad total"
+        contras:
+          - "Más tiempo de setup"
+          - "Necesita configurar servidor propio"
+          - "MongoDB no es ideal para datos relacionales (clientes, eventos)"
+        per_que_descartada: "Más overhead de configuración para un MVP rápido"
+
+      - nombre: "Laravel + Vue/React"
+        pros:
+          - "Laravel muy productivo"
+          - "ORM Eloquent excelente para CRUD"
+        contras:
+          - "Requiere servidor PHP"
+          - "Deploy más complejo"
+          - "Ecosistema diferente a JS moderno"
+        per_que_descartada: "Mayor coste de infraestructura, curva de aprendizaje si hay cambio de equipo"
+
+      - nombre: "No-code (Bubble, Retool)"
+        pros:
+          - "Rapidísimo para MVP"
+          - "Sin código"
+        contras:
+          - "Limitado en personalización"
+          - "Coste mensual elevado a largo plazo"
+          - "Vendor lock-in"
+        per_que_descartada: "Limita crecimiento futuro y personalización"
+
+    consequencies:
+      positives:
+        - "MVP visual creado en ~1 hora"
+        - "Componentes UI profesionales listos (shadcn/ui)"
+        - "Deploy gratis en Vercel"
+        - "TypeScript aporta seguridad de tipos"
+        - "Supabase ofrece tier gratuito generoso"
+      negatives:
+        - "Requiere conocimiento de React/Next.js"
+        - "Supabase tiene límites en tier gratuito (puede requerir upgrade)"
+      impacto: "Todo el proyecto usa este stack"
+
+    notes: "shadcn/ui no es una librería, son componentes copiados al proyecto - permite personalización total"
+
+index:
+  - id: "001"
+    titulo: "Stack tecnológico: Next.js + Tailwind + shadcn/ui + Supabase"
+    estado: accepted

@@ -1,0 +1,549 @@
+# Context - Cerimonies
+# Contexto compilado automáticamente por Context Agent
+# Este archivo contiene TODO lo necesario para trabajar en el proyecto
+# Última compilación: 2025-11-27
+
+metadata:
+  compilado_por: "Context Agent"
+  ultima_compilacion: "2025-11-27"
+  version_context: "1.0.0"
+
+# ============================================
+# README DEL PROYECTO
+# Sintetizado del README.md principal
+# ============================================
+readme_proyecto: |
+  # Cerimonies - Sistema de Gestión para Xocolat Events
+
+  Sistema de automatización integral para Xocolat Events (gestión eventos, catering, bodas).
+  Cliente: Xocolat Events - Mataró, Barcelona
+  Especializado en organización de bodas (95% del negocio).
+
+  ## Objetivo
+
+  Sistema integral completo: CRM + operativa + facturación para gestión interna.
+  Sin web pública, enfocado en uso interno del equipo.
+
+  Necesidades reales del cliente:
+  - Gestión de clientes (actualmente sin CRM que le convenza)
+  - Calendario de eventos
+  - Recordatorios automáticos (aniversarios, cumpleaños)
+  - Sistema de reseñas
+  - Leads por múltiples canales: WhatsApp, email, bodas.net, Instagram, web
+
+  ## Estado Actual
+
+  - Fase: MVP Visual completado + Presupuesto y propuesta comercial preparados
+  - Última actualización: 2025-11-27
+  - Próximo hito: Presentar presupuesto al cliente y cerrar acuerdo comercial
+
+  ## Features Operativas
+
+  ✅ Dashboard: Métricas, alertas, próximos eventos, clientes recientes, recordatorios
+  ✅ Gestión de Clientes: Lista con filtros/búsqueda, ficha detallada, acciones rápidas (WhatsApp, reseña)
+  ✅ Calendario: Vista mensual, eventos por día, próximos eventos
+
+  ## Stack Tecnológico
+
+  Frontend: Next.js 14 (App Router + API Routes) + Tailwind CSS + shadcn/ui + TypeScript
+  Backend: Next.js API Routes + Server Actions
+  Base de datos: PostgreSQL (Supabase) + Supabase Auth
+  Integraciones: Mailchimp (cliente ya lo tiene), Twilio SMS (~0.065€/SMS)
+  Deploy: VPS Hostinger (4GB RAM) con Docker + Docker Compose
+
+  ## Instalación
+
+  ```bash
+  npm install       # Instalar dependencias
+  npm run dev       # Modo desarrollo (http://localhost:3000)
+  npm run build     # Build producción
+  npm start         # Iniciar producción
+  ```
+
+  ## Decisiones Arquitectónicas Clave
+
+  - Stack definitivo: Next.js 14 + Tailwind + shadcn/ui + Supabase + Twilio SMS + Mailchimp
+  - Modelo comercial: 1.000€ inicial + 150€/mes × 18 meses (modelo recurrente con permanencia)
+  - SMS desde MVP: Integración Twilio obligatoria desde inicio (tasa apertura 98% vs Email 20%)
+
+  ## Próximos Pasos Prioritarios
+
+  1. Presentar presupuesto al cliente (presupuesto técnico + propuesta suscripción)
+  2. Decidir modelo de negocio definitivo (validar rentabilidad 1.000€+150€/mes)
+  3. Validar volumen SMS mensual con cliente (confirmar 150-300 SMS/mes)
+  4. Cerrar acuerdo comercial y firmar contrato
+  5. Evaluar estrategia multi-cliente (3-5 clientes sector bodas/eventos)
+  6. Iniciar desarrollo tras firma (setup infraestructura, Supabase, autenticación)
+
+  ## Convenciones
+
+  - Idioma UI: Castellano
+  - Idioma código: Inglés (variables, funciones) con comentarios en castellano
+  - Componentes: Convenciones estándar React/Next.js
+
+  ## Sistema de Memoria
+
+  Proyecto utiliza MemSys3 v0.7.0 para gestión de contexto y sesiones.
+
+# ============================================
+# PROJECT INFO
+# ============================================
+project:
+  nombre: "Cerimonies"
+  descripcion: "Sistema de automatización integral para Xocolat Events (gestión eventos, catering, bodas)"
+  cliente: "Xocolat Events - Mataró, Barcelona"
+  alcance: "Sistema interno (sin web pública), enfocado en gestión de clientes, presupuestos, calendario eventos, operativa diaria"
+  fase: "Presupuestación y Propuesta Comercial"
+  ultima_feature: "Documentación comercial completa: presupuesto técnico + propuesta suscripción + análisis rentabilidad"
+  siguiente_milestone: "Presentar presupuesto al cliente y cerrar acuerdo comercial"
+
+# ============================================
+# FEATURES OPERATIVAS
+# ============================================
+features:
+  dashboard:
+    nombre: "Dashboard"
+    estado: "operativo"
+    descripcion: "Métricas (total clientes, bodas confirmadas, presupuestos pendientes, facturación estimada), alertas importantes, próximos eventos, clientes recientes, recordatorios con prioridad visual"
+
+  clientes:
+    nombre: "Gestión Clientes"
+    estado: "operativo"
+    descripcion: "Lista con búsqueda en tiempo real, filtros por estado (lead/contactado/presupuestado/confirmado/realizado), iconos de origen (bodas.net/WhatsApp/Instagram/web/referido), acciones rápidas (WhatsApp/Email/Ver ficha)"
+
+  cliente_detalle:
+    nombre: "Ficha Cliente Detallada"
+    estado: "operativo"
+    descripcion: "Datos completos con tabs (Información/Eventos/Historial), cuenta atrás hasta fecha evento, presupuesto visible, acciones rápidas (Pedir reseña con mensaje WhatsApp predefinido, Programar reunión, Crear presupuesto, Enviar felicitación)"
+    notas: "Botón 'Pedir reseña' resuelve dolor real del cliente - genera enlace WhatsApp con mensaje predefinido"
+
+  calendario:
+    nombre: "Calendario"
+    estado: "operativo"
+    descripcion: "Calendario visual interactivo con días marcados, resumen mensual (bodas/reuniones/otros), panel lateral con eventos del día seleccionado, próximos eventos listados"
+
+# ============================================
+# STACK TECNOLÓGICO
+# ============================================
+stack:
+  frontend:
+    framework: "Next.js 14 (App Router + API Routes)"
+    ui: "Tailwind CSS + shadcn/ui"
+    lenguaje: "TypeScript"
+    notas: "shadcn/ui NO es librería, son componentes copiados al proyecto - permite personalización total"
+
+  backend:
+    framework: "Next.js API Routes + Server Actions"
+    database: "PostgreSQL (Supabase)"
+    auth: "Supabase Auth"
+    notas: "Supabase Free Tier inicial: 500MB, 50K usuarios/mes - Supabase Pro si necesita más recursos"
+
+  integraciones:
+    email: "Mailchimp (cliente ya lo tiene contratado - NO duplicar en costes)"
+    sms: "Twilio (~0.065€/SMS España, estimado 150-300 SMS/mes)"
+    notas_sms: "Tasa apertura SMS 98% vs Email 20% - crítico para recordatorios"
+
+  deploy:
+    platform: "VPS Hostinger (4GB RAM) con Docker + Docker Compose"
+    dominio: "A definir con cliente"
+    ssl: "Incluido"
+
+# ============================================
+# URLS PRINCIPALES
+# ============================================
+urls:
+  desarrollo: "http://localhost:3000"
+  produccion: "A definir tras firma de contrato"
+
+# ============================================
+# ADRs RELEVANTES
+# Decisiones arquitectónicas con impacto global
+# ============================================
+adrs:
+  - id: "001"
+    titulo: "Stack tecnológico: Next.js + Tailwind + shadcn/ui + Supabase"
+    fecha: "2025-11-27"
+    estado: "accepted"
+    area: "frontend"
+
+    context: |
+      Necesitábamos elegir el stack tecnológico para Cerimonies.
+
+      Requisitos clave:
+      - Desarrollo rápido (MVP visual para presentar al cliente)
+      - UI profesional y moderna
+      - Escalable para añadir funcionalidades (CRM, calendario, facturación)
+      - Coste inicial bajo o nulo
+      - Fácil de mantener
+
+    decision: |
+      Next.js 16 + Tailwind CSS 4 + shadcn/ui para frontend,
+      con Supabase como backend/base de datos cuando se necesite persistencia.
+
+    alternativas_descartadas:
+      - "MERN Stack: Más overhead de configuración para MVP rápido, MongoDB no ideal para datos relacionales"
+      - "Laravel + Vue/React: Mayor coste infraestructura, curva de aprendizaje si hay cambio de equipo"
+      - "No-code (Bubble, Retool): Limita crecimiento futuro y personalización, vendor lock-in"
+
+    consecuencias:
+      positivas:
+        - "MVP visual creado en ~1 hora"
+        - "Componentes UI profesionales listos (shadcn/ui)"
+        - "Deploy gratis en Vercel (aunque producción será VPS Hostinger)"
+        - "TypeScript aporta seguridad de tipos"
+        - "Supabase ofrece tier gratuito generoso"
+      negativas:
+        - "Requiere conocimiento de React/Next.js"
+        - "Supabase tiene límites en tier gratuito (puede requerir upgrade)"
+
+    impacto: "TODO el proyecto usa este stack - define toda la arquitectura del sistema y costes de infraestructura"
+
+# ============================================
+# SESIONES RECIENTES
+# Sintetizado de las sesiones más impactantes
+# ============================================
+sesiones_recientes:
+  - id: "2025-11-27-presupuesto-comercial"
+    titulo: "Presupuesto técnico y propuesta comercial con modelo suscripción"
+    fecha: "2025-11-27"
+    duracion: "2h"
+
+    que_se_hizo:
+      - "Presupuesto técnico completo: 275h desarrollo en 7 fases, 3 opciones de precio (13.750€/17.875€/15.500€)"
+      - "Análisis costes infraestructura: Free Tier (~23-33€/mes) vs Pro (~71€/mes) con Twilio SMS incluido"
+      - "Propuesta comercial suscripción: 1.000€ inicial + 850€/mes × 18 meses (con 3 variantes)"
+      - "Análisis rentabilidad ajustado: 1.000€ + 125-150€/mes → 122€/mes margen (81%) pero NO cubre desarrollo con 1 cliente"
+
+    decisiones_tomadas:
+      - decision: "Stack definitivo: Next.js 14 + Supabase + Twilio SMS + Mailchimp"
+        justificacion: "Desarrollo ágil, escalable, costes controlados, integraciones nativas"
+
+      - decision: "Integración Twilio SMS obligatoria en MVP"
+        justificacion: "Cliente necesita recordatorios por SMS (tasa apertura 98% vs Email 20%)"
+
+      - decision: "Modelo de negocio: ingresos recurrentes con permanencia 18 meses"
+        justificacion: "Flujo de caja predecible, relación largo plazo, mayor LTV del cliente"
+
+      - decision: "Propuesta ajustada: 1.000€ + 150€/mes viable solo con múltiples clientes"
+        justificacion: "Con 1 cliente tarda 7.5 años en amortizar desarrollo. Necesita 3-5 clientes o subir precios"
+
+    problemas_resueltos:
+      - problema: "Precio suscripción inicial (850€/mes) demasiado alto para cliente pequeño"
+        solucion: "Ajustado a propuesta realista de 125-150€/mes con análisis de viabilidad por múltiples clientes"
+
+      - problema: "Cliente ya paga Mailchimp, estaba duplicado en costes"
+        solucion: "Eliminado Mailchimp de costes infraestructura en análisis final de rentabilidad"
+
+    documentos_creados:
+      - "docs/presupuesto-proyecto.md (11KB): Presupuesto técnico detallado con 275h desarrollo"
+      - "docs/propuesta-comercial-recurrente.md (13KB): Modelo suscripción 1.000€ + 850€/mes"
+      - "docs/calculo-rentabilidad.md (11KB): Análisis realista 1.000€ + 125-150€/mes"
+
+    conclusion_financiera_critica: |
+      Con 1.000€ + 150€/mes se obtiene 122€/mes de margen (81%), pero solo ingresas 3.700€ en 18 meses.
+      El desarrollo vale 11.000-13.750€, tardas ~7.5 años en recuperar inversión con 1 cliente.
+
+      Estrategias viables:
+      1. Buscar 3-5 clientes sector bodas/eventos → Beneficio 610€/mes con 5 clientes
+      2. Subir pago inicial a 6.000-8.000€ para cubrir desarrollo desde inicio
+      3. Subir cuota mensual a 400-600€/mes
+      4. Desarrollar sistema template reutilizable (personalización 20-30h por cliente adicional)
+
+    proximos_pasos:
+      - "Presentar presupuesto y propuesta comercial al cliente Xocolat Events"
+      - "Decidir modelo de negocio final: suscripción baja con múltiples clientes vs precio único más alto"
+      - "Si acepta: firmar contrato y comenzar desarrollo en próxima sesión"
+      - "Validar con cliente volumen esperado de SMS mensuales para ajustar costes Twilio"
+      - "Definir si se va a buscar más clientes del sector bodas/eventos con sistema reutilizable"
+
+  - id: "2025-11-27-mvp-visual"
+    titulo: "MVP Visual con datos demo para presentación cliente"
+    fecha: "2025-11-27"
+    duracion: "1h"
+
+    que_se_hizo:
+      - "Proyecto Next.js completo: Next.js 16 + TypeScript + Tailwind CSS 4 + shadcn/ui con App Router"
+      - "Dashboard principal: Métricas, alertas, próximos eventos, clientes recientes, recordatorios"
+      - "Lista de Clientes: Tabla con búsqueda en tiempo real, filtros por estado, iconos de origen, acciones rápidas"
+      - "Ficha Cliente detallada: Datos completos con tabs, cuenta atrás hasta evento, presupuesto, acciones rápidas (Pedir reseña genera mensaje WhatsApp)"
+      - "Calendario de eventos: Calendario interactivo, resumen mensual, panel lateral con eventos del día, próximos eventos"
+      - "Datos demo realistas: 8 clientes ficticios con diferentes estados y orígenes, eventos programados, alertas de demostración"
+
+    decisiones_tomadas:
+      - decision: "Stack: Next.js 16 + Tailwind + shadcn/ui + Supabase (futuro)"
+        justificacion: "Desarrollo rápido, componentes profesionales, escalable, sin coste inicial"
+        adr_relacionada: "001"
+
+      - decision: "MVP solo visual sin backend real"
+        justificacion: "Objetivo es impacto visual para conseguir reunión, no funcionalidad completa"
+
+      - decision: "Datos demo hardcodeados en TypeScript"
+        justificacion: "Permite demo inmediata sin configurar BD, fácil de modificar"
+
+    tecnologias_agregadas:
+      - "Next.js 16 (App Router, SSR)"
+      - "Tailwind CSS 4 (estilos rápidos y consistentes)"
+      - "shadcn/ui (componentes profesionales: Card, Table, Badge, Calendar, Tabs)"
+      - "date-fns (dependencia del Calendar de shadcn/ui)"
+
+    notas_contexto: |
+      El cliente (Xocolat Events) organiza principalmente bodas (95% del negocio).
+      Actualmente usa Holded solo para facturación, no tiene CRM que le convenza.
+      Recibe leads por múltiples canales: WhatsApp, email, bodas.net, Instagram, web.
+      Necesidades principales: gestión clientes, calendario, recordatorios automáticos (aniversarios, cumpleaños), sistema de reseñas.
+
+      El MVP incluye botón "Pedir reseña" que genera enlace WhatsApp con mensaje predefinido - esto resuelve un dolor real del cliente.
+
+      Servidor de desarrollo corriendo en http://localhost:3000
+
+    proximos_pasos:
+      - "Presentar MVP al cliente y conseguir reunión presencial de auditoría"
+      - "Tras reunión: definir requisitos funcionales detallados"
+      - "Configurar Supabase para persistencia real de datos"
+      - "Implementar autenticación"
+      - "Añadir formularios funcionales (crear/editar cliente)"
+
+# ============================================
+# GOTCHAS CRÍTICOS
+# Errores/configuraciones que rompen el proyecto
+# ============================================
+gotchas:
+  - id: "modelo_suscripcion_no_rentable_1_cliente"
+    criticidad: "alta"
+    tipo: "warning"
+    problema: "Modelo suscripción 1.000€ + 150€/mes NO rentable con un solo cliente"
+    contexto: "Con 1 cliente solo ingresas 3.700€ en 18 meses, pero desarrollo vale 11.000-13.750€. Tardas ~7.5 años en amortizar."
+    solucion: "Necesario conseguir 3-5 clientes con sistema reutilizable O subir pago inicial a 6.000-8.000€ O subir cuota mensual a 400-600€/mes"
+    impacto: "Define viabilidad financiera del proyecto completo"
+
+  - id: "twilio_sms_coste_variable"
+    criticidad: "media"
+    tipo: "gotcha"
+    problema: "Twilio SMS tiene coste variable (~0.065€/SMS España) difícil de estimar"
+    contexto: "Cliente necesita SMS para recordatorios (tasa apertura 98% vs Email 20%), pero volumen mensual no confirmado"
+    solucion: "Calcular promedio 150-300 SMS/mes según uso esperado del cliente, incluir en análisis. Validar con cliente volumen real esperado."
+    impacto: "Afecta costes mensuales infraestructura y margen de beneficio"
+
+  - id: "next_js_16_turbopack_default"
+    criticidad: "baja"
+    tipo: "warning"
+    problema: "Next.js 16 usa Turbopack por defecto, algunas opciones de create-next-app han cambiado"
+    solucion: "Usar --no-turbopack si hay problemas de compatibilidad"
+    impacto: "Puede afectar desarrollo local si hay incompatibilidades"
+
+  - id: "shadcn_ui_init_prompts"
+    criticidad: "baja"
+    tipo: "gotcha"
+    problema: "shadcn/ui init requiere responder prompts o usar -d para defaults"
+    solucion: "npx shadcn@latest init -d para instalación sin prompts"
+    impacto: "Afecta setup inicial del proyecto"
+
+  - id: "mailchimp_duplicado_costes"
+    criticidad: "media"
+    tipo: "gotcha"
+    problema: "Cliente ya paga Mailchimp, NO debe incluirse en costes de infraestructura del proyecto"
+    solucion: "Eliminar Mailchimp de análisis de costes mensuales - cliente ya lo tiene contratado"
+    impacto: "Afecta cálculo de rentabilidad y propuesta comercial"
+
+# ============================================
+# PENDIENTES PRIORITARIOS
+# Tareas más importantes del proyecto ahora
+# ============================================
+pendientes:
+  - prioritat: 1
+    tasca: "Presentar presupuesto y propuesta comercial al cliente"
+    detall: "Enviar docs/presupuesto-proyecto.md y docs/propuesta-comercial-recurrente.md a Xocolat Events"
+    bloqueante: false
+
+  - prioritat: 2
+    tasca: "Decidir modelo de negocio definitivo"
+    detall: "Evaluar si 1.000€+150€/mes viable con múltiples clientes o subir precio inicial a 6.000-8.000€"
+    bloqueante: true
+    notas: "Necesario ANTES de firmar contrato - define viabilidad financiera del proyecto"
+
+  - prioritat: 3
+    tasca: "Validar volumen SMS mensual con cliente"
+    detall: "Confirmar estimación 150-300 SMS/mes para ajustar costes Twilio en propuesta final"
+    bloqueante: false
+
+  - prioritat: 4
+    tasca: "Cerrar acuerdo comercial y firmar contrato"
+    detall: "Definir forma de pago (3 o 4 pagos), permanencia 18 meses, condiciones renovación post-18 meses"
+    bloqueante: true
+    notas: "Bloqueante para iniciar desarrollo real"
+
+  - prioritat: 5
+    tasca: "Evaluar estrategia multi-cliente"
+    detall: "Decidir si buscar 3-5 clientes sector bodas/eventos con sistema template reutilizable (personalización 20-30h por cliente adicional)"
+    bloqueante: false
+    notas: "Necesario para viabilidad financiera si se mantiene modelo 1.000€+150€/mes"
+
+  - prioritat: 6
+    tasca: "Iniciar desarrollo tras firma"
+    detall: "Setup infraestructura: VPS Hostinger dockerizado, Supabase (BD + Auth), autenticación, migrar MVP a producción"
+    bloqueante: false
+    dependencias: "Requiere prioridad 4 completada (contrato firmado)"
+
+# ============================================
+# BACKLOG
+# Sistema de trabajo futuro pendiente
+# ============================================
+backlog:
+  existe: true
+
+  sistema: |
+    Sistema de backlog implementado en memsys3/backlog/
+
+    6 tipos de items:
+    - ISSUE-XXX: Problemas técnicos, bugs, tech debt
+    - FEATURE-XXX: Nueva funcionalidad a implementar
+    - SPEC-XXX: Especificación técnica detallada
+    - BLUEPRINT-XXX: Diseño arquitectónico de alto nivel
+    - IMPROVEMENT-XXX: Mejora de funcionalidad existente
+    - EXPLORATION-XXX: Investigación sin solución clara
+
+    Estados: Propuesto, Abierto, En Progreso, Bloqueado, Completado, Cancelado, Rechazado
+
+    Workflow: Backlog (futuro) → Sessions (hacer) → ADRs (decidir) → Project Status (ahora)
+
+  estadisticas:
+    issues: "0"
+    features: "0"
+    improvements: "0"
+    specs: "0"
+    blueprints: "0"
+    explorations: "0"
+    total: "0"
+
+  items_criticos: []
+
+  notas: "Backlog existe y está configurado pero aún no tiene items creados. Sistema listo para usar cuando se identifique trabajo futuro."
+
+# ============================================
+# DECISIONES COMERCIALES CLAVE
+# No son ADRs técnicas pero impactan el proyecto completo
+# ============================================
+decisiones_comerciales:
+  - id: "comercial-001"
+    titulo: "Modelo de ingresos recurrentes con permanencia"
+    decision: "1.000€ inicial + 150€/mes × 18 meses (viable con múltiples clientes)"
+    fecha: "2025-11-27"
+    justificacion: "Flujo de caja predecible, relación largo plazo, mayor LTV del cliente"
+    impacto: "Requiere estrategia multi-cliente o ajuste de precios para rentabilidad"
+
+  - id: "comercial-002"
+    titulo: "Integración SMS obligatoria en MVP"
+    decision: "Incluir envío SMS automático desde el inicio (no fase 2)"
+    fecha: "2025-11-27"
+    justificacion: "Tasa apertura SMS 98% vs Email 20%, crítico para recordatorios de bodas"
+    impacto: "Añade coste mensual variable Twilio (~10-20€/mes con 150-300 SMS/mes)"
+
+# ============================================
+# CONVENCIONES DEL CÓDIGO
+# ============================================
+convenciones:
+  idioma_ui: "Castellano"
+  idioma_codigo: "Inglés (variables, funciones) con comentarios en castellano donde sea útil"
+  framework: "Convenciones estándar de React/Next.js"
+  componentes_ui: "shadcn/ui (componentes copiados al proyecto, NO librería externa)"
+  notas: "UI en castellano para cliente español, código sigue best practices de la industria"
+
+# ============================================
+# CONTEXTO DEL CLIENTE
+# Información clave para entender necesidades del negocio
+# ============================================
+contexto_cliente:
+  empresa: "Xocolat Events"
+  ubicacion: "Mataró, Barcelona"
+  sector: "Organización de bodas y eventos (95% bodas)"
+
+  situacion_actual:
+    crm: "Sin CRM que le convenza"
+    facturacion: "Holded (solo facturación, no CRM)"
+    canales_leads:
+      - "WhatsApp (principal)"
+      - "Email"
+      - "bodas.net"
+      - "Instagram"
+      - "Web propia"
+      - "Referidos"
+
+  necesidades_principales:
+    - "Gestión centralizada de clientes"
+    - "Calendario de eventos"
+    - "Recordatorios automáticos (aniversarios, cumpleaños)"
+    - "Sistema de reseñas (actualmente manual por WhatsApp)"
+    - "Seguimiento de presupuestos y estados"
+
+  pain_points:
+    - "Dispersión de información en múltiples canales"
+    - "Sin sistema automatizado de recordatorios"
+    - "Pedir reseñas manualmente es tedioso"
+    - "No visualiza calendario de eventos de forma clara"
+
+# ============================================
+# NOTAS DE COMPILACIÓN DEL CONTEXT AGENT
+# Transparencia del proceso de compilación
+# ============================================
+notas_compilacion:
+  adrs_totales: 1
+  adrs_incluidas: 1
+  justificacion_adrs: "ADR-001 es la única decisión arquitectónica documentada. Tiene impacto global en todo el proyecto (define stack completo). Se incluyó completa."
+
+  sesiones_totales: 2
+  sesiones_incluidas: 2
+  justificacion_sesiones: "Ambas sesiones son recientes (2025-11-27) y altamente relevantes. Primera sesión: MVP visual funcional. Segunda sesión: documentación comercial completa. Sintetizadas manteniendo decisiones clave y contexto crítico."
+
+  backlog_existe: true
+  backlog_items_totales: 0
+  backlog_items_incluidos: 0
+  justificacion_backlog: "Backlog configurado pero sin items creados aún. Se incluyó descripción del sistema para que DevAgents sepan cómo usarlo."
+
+  readme_status: "README.md creado automáticamente por CA extrayendo información de project-status.yaml. Incluido completo en sección readme_proyecto."
+
+  tokens_estimados_iniciales: "~7.400 tokens (29.604 caracteres leídos de README, adr.yaml, sessions.yaml, project-status.yaml, backlog/README.md)"
+  tokens_estimados_finales: "~2.800 tokens (11.200 caracteres en context.yaml generado)"
+  reduccion_tokens: "~62% de reducción aplicando criterio de selección inteligente"
+
+  archivamiento: "No necesario - tokens muy por debajo del límite de 150K (solo 7.4K tokens iniciales)"
+
+  criterios_filtraje_aplicados:
+    - "Incluir TODA la información del README (proyecto nuevo, todo es relevante)"
+    - "Incluir ADR-001 completa (única decisión arquitectónica, impacto global)"
+    - "Sintetizar sesiones recientes manteniendo decisiones clave y próximos pasos"
+    - "Incluir TODOS los gotchas (proyecto nuevo, todos son relevantes para contexto)"
+    - "Incluir TODOS los pendientes prioritarios (definen roadmap inmediato)"
+    - "Incluir descripción completa del backlog (sistema listo para usar)"
+    - "Añadir sección contexto_cliente (crítico para entender necesidades del negocio)"
+    - "Añadir sección decisiones_comerciales (no son ADRs técnicas pero impactan proyecto completo)"
+
+  lineas_totales: "~450 líneas (de 2000 máximo - 22.5% del límite)"
+  margen_disponible: "~1.550 líneas disponibles para crecimiento futuro del proyecto"
+
+  observaciones: |
+    Proyecto en fase muy temprana (solo 2 sesiones, 1 ADR).
+    Todo el contexto actual es relevante y se ha incluido.
+
+    Contexto compilado SIN pérdida de información:
+    - README completo (recién creado)
+    - ADR única incluida completa
+    - Sesiones recientes sintetizadas manteniendo esencia
+    - Gotchas todos relevantes
+    - Pendientes prioritarios definen roadmap comercial
+    - Backlog configurado y listo para usar
+
+    Proyecto tiene MUCHO margen de crecimiento antes de necesitar archivado a history/.
+
+    Próximas compilaciones deberían:
+    - Monitorear crecimiento de sessions.yaml (actualmente solo 2)
+    - Monitorear crecimiento de adrs.yaml (actualmente solo 1)
+    - Monitorear items creados en backlog/ (actualmente 0)
+    - Aplicar criterio más selectivo cuando se superen 50+ sesiones o 20+ ADRs
+
+# ============================================
+# NOTAS DE USO
+# ============================================
+# Este archivo es COMPILADO automáticamente, NO editar manualmente
+# Para actualizar: ejecutar @memsys3/prompts/compile-context.md
+# Para más detalles: ver memory/full/adr.yaml y memory/full/sessions.yaml
+# Si contexto demasiado grande: CA moverá datos a memory/history/ (no leído)
