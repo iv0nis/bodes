@@ -17,7 +17,7 @@ export function Sidebar() {
   return (
     <aside className="w-64 bg-slate-900 text-white min-h-screen flex flex-col">
       {/* Logo */}
-      <div className="p-6 border-b border-slate-700">
+      <div className="p-6 border-b border-slate-700 bg-white/95 rounded-lg mx-3 mt-3">
         <Image
           src="/xocolat-logo.png"
           alt="Xocolat Events"
