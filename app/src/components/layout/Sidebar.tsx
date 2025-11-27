@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
@@ -17,8 +18,14 @@ export function Sidebar() {
     <aside className="w-64 bg-slate-900 text-white min-h-screen flex flex-col">
       {/* Logo */}
       <div className="p-6 border-b border-slate-700">
-        <h1 className="text-2xl font-bold text-amber-400">Cerimonies</h1>
-        <p className="text-sm text-slate-400 mt-1">Xocolat Events</p>
+        <Image
+          src="/xocolat-logo.png"
+          alt="Xocolat Events"
+          width={200}
+          height={80}
+          className="w-full h-auto"
+          priority
+        />
       </div>
 
       {/* Navegación */}
